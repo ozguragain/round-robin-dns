@@ -14,7 +14,9 @@ services:
     <<: *api_config
 
   network-tester:
-    image: rockylinux/rockylinux:10
+    build:
+      context: .
+      dockerfile: tester.Dockerfile
     networks:
       internal_net:
     command: sleep infinity
