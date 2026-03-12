@@ -34,6 +34,7 @@ By executing nslookup within the tester container, we confirm that a single host
 ```bash
 docker exec -it <tester-container-name> nslookup lb-search
 ```
+Note: Default tester-container-name is round-robin-dns-network-tester-1
 
 The query returns three unique IPs (e.g., 172.21.0.3, 172.21.0.4, 172.21.0.5), proving the DNS multi-value response.
 
