@@ -44,8 +44,9 @@ The query returns three unique IPs (e.g., 172.21.0.3, 172.21.0.4, 172.21.0.5), p
 Successive curl requests demonstrate that Docker's DNS engine rotates the target container for every new connection:
 
 ```bash
+docker exec -it round-robin-dns-network-tester-1 bash
 curl -s lb-search:8888 | grep HOSTNAME
 ```
-Repeat this command 3-4 times
+Repeat this bash 3-4 times inside the container.
 
 Each response returns a different HOSTNAME (Container ID), confirming that traffic is being balanced across all available nodes.
